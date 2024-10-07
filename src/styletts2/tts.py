@@ -82,12 +82,12 @@ class StyleTTS2:
         )
 
 
-    def load_model(self, model_path=None, config_path=None):
+    def load_model(self, model_path=LIBRI_TTS_CHECKPOINT_URL, config_path=LIBRI_TTS_CONFIG_URL):
         """
         Loads model to prepare for inference. Loads checkpoints from provided paths or from local cache (or downloads
         default checkpoints to local cache if not present).
-        :param model_path: Path to LibriTTS StyleTTS2 model checkpoint (TODO: LJSpeech model support)
-        :param config_path: Path to LibriTTS StyleTTS2 model config JSON (TODO: LJSpeech model support)
+        :param model_path: Path or HuggingFace URL to StyleTTS2 model checkpoint (TODO: LJSpeech model support)
+        :param config_path: Path or HuggingFace URL to model config JSON (TODO: LJSpeech model support)
         :return:
         """
 

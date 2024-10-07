@@ -91,13 +91,8 @@ class StyleTTS2:
         :return:
         """
 
-        if not model_path or not Path(model_path).exists():
-            print("Invalid or missing model checkpoint path. Loading default model...")
-            model_path = cached_path(LIBRI_TTS_CHECKPOINT_URL)
-
-        if not config_path or not Path(config_path).exists():
-            print("Invalid or missing config path. Loading default config...")
-            config_path = cached_path(LIBRI_TTS_CONFIG_URL)
+        model_path = cached_path(model_path)
+        config_path = cached_path(config_path)
 
         self.config = yaml.safe_load(open(config_path))
 
